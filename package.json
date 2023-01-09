@@ -9,11 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@material-tailwind/react": "^1.2.4",
-    "@react-keycloak/web": "^3.4.0",
-    "axios": "^0.27.2",
     "keycloak-js": "^20.0.2",
-    "phosphor-react": "^1.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.6.2"

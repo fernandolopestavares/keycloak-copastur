@@ -6,16 +6,19 @@ export default function Resources(){
   const [authenticated, setAuthenticated] = useState(false)
 
   useEffect(()=>{
-    const keycloak = Keycloak('/keycloak.json');
+    const keycloak = Keycloak('./keycloak.json');
     keycloak.init({ onLoad: 'login-required' }).then(authenticated => {
       setKeycloak(keycloak)
       setAuthenticated(authenticated)
+      console.log('STATUS', authenticated)
     })
-  }, [])
+  }, []);
 
+  
   if (keycloak) {
     if (authenticated) return (
       <div className='my-12 grid place-items-center'>
+        <h1>CARLAO</h1>
         <p>This is a Keycloak-secured component of your application. You shouldn't be able
           to see this unless you've authenticated with Keycloak.</p>
           <div>
@@ -25,6 +28,7 @@ export default function Resources(){
     ); 
     else return (<div className='my-12'>Unable to authenticate!</div>)
   }
+
 
   return(
     <>
